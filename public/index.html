@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tumblr Style Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">Blog</h1>
+    <div class="search-wrapper" id="search-wrapper">
+      <input id="site-search" type="search" placeholder="Buscar tópicos ou posts... (atalho: /)" aria-label="Buscar" autocomplete="off">
+      <button id="clear-search" aria-label="Limpar busca" title="Limpar">✖</button>
+      <ul id="search-suggestions" class="suggestions" role="listbox" aria-label="Sugestões"></ul>
+    </div>
+    <div class="user-container">
+      <div class="user-icon" id="user-icon">👤</div>
+      <div class="user-info" id="user-info">
+        <p><strong>Usuário:</strong> Victor</p>
+        <p><strong>Email:</strong> victor@example.com</p>
+        <p><strong>Membro desde:</strong> 2025</p>
+      </div>
+    </div>
+  </header>
+
+  <button id="btn-publicar" class="btn-publicar">＋ Publicar</button>
+
+  <div class="create-modal" id="create-modal" aria-hidden="true">
+    <div class="create-content" role="dialog" aria-modal="true" aria-labelledby="create-title">
+      <span id="close-create" aria-label="Fechar">&times;</span>
+      <h2 id="create-title">Novo Post</h2>
+      <input type="text" id="post-title" placeholder="Título (opcional)" />
+      <textarea id="post-text" placeholder="Escreva algo..."></textarea>
+      <label for="post-image" class="file-label">Adicionar imagem (opcional)</label>
+      <input type="file" id="post-image" accept="image/*">
+      <div style="display:flex; gap:8px;">
+        <button id="submit-post" class="btn-submit">Publicar</button>
+        <button id="cancel-post" class="btn-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>TÓPICOS</h3>
+      <ul>
+        <li>Games</li>
+        <li>Tecnologia</li>
+        <li>Arte</li>
+        <li>Design</li>
+        <li>Filmes</li>
+      </ul>
+    </aside>
+
+    <main class="gallery" id="gallery"></main>
+  </div>
+
+  <div class="modal" id="image-modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <img id="modal-image" alt="Imagem ampliada" />
+      <div class="like-section">
+        <button id="like-btn">❤️ Curtir</button>
+        <span id="like-count">0</span>
+      </div>
+      <div class="comments">
+        <h3>Comentários</h3>
+        <div id="comment-list"></div>
+        <form id="comment-form">
+          <input type="text" id="comment-input" placeholder="Digite um comentário..." required />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
